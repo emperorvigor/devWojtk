@@ -1,0 +1,62 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body { font-family:Arial; }
+input { width:100%; height:30px; }
+select { width:100%; height:30px;; margin:0px; padding:0px; }
+option { padding:5px; }
+h1 { text-align:center; font-size:120%; padding:3px; }
+footer { font-size:75%; text-align:center; margin-top:10px; }
+
+#content { max-width:1400px; margin:0 auto;}
+
+#iniOrder,
+#containerOfTargets { margin-top:25px; }
+
+.div-table { margin:10px; }
+
+.row { display:flex; }
+.row:hover { background-color:grey; }
+.even { background-color:lightgray; }
+
+.column { border:1px solid black; padding:4px 7px; flex:2; }
+.colum:last-child:hover { background-color:red; }
+.min { flex:1; }
+.tiny { flex:0.25; }
+.passat,
+.handlat { width:50%; height:100%; cursor:pointer; z-index:9;}
+.passat { background-color:rgba(255, 255, 0, 0.41); float:left; }
+.handlat { background-color:rgba(255, 0, 0, 0.41); float:right; }
+
+.headline { background-color:black; color:white; }
+
+#segNav { display:flex; }
+#newSeg { margin: 0px 7px; }
+#newIni { margin-top:14px; }
+.button { padding:8px 0px 2px 0px; width:100%; height:30px; background-color:green; text-align:center; cursor:pointer; color:white; }
+.button:hover { background-color:lightgreen; }
+
+.editPen { width:16px;height:auto; float:right; margin-top:3px; cursor:pointer; }
+
+#addCharNow { background-color:#ffb13d; }
+#addCharNow:hover { background-color:#ffc774; }
+#cancel { background-color:#ff3d3d; }
+#cancel:hover { background-color:#ff8686; }

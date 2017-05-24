@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>WoJtK.com - You'll learn the name!</title>
+
+<meta name = "keywords" content = "" />
+<meta name = "description" content = "" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1 user-scalable=no">
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<link href="css/demo.css" rel="stylesheet" type="text/css">
+<link href="css/demoStyleSheet.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.smint.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('.subMenu').smint({
+    	'scrollSpeed' : 1000
+    });
+});
+</script>
+
+</head>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+
+	<div class="wrap">
+
+	  <div class="subMenu" >
+	 	<div class="inner" id="mMenu">
+			<a href="#" id="sTop" class="subNavBtn">Home</a>
+			<a href="#" id="s1" class="subNavBtn">Section 1</a>
+			<a href="#" id="s2" class="subNavBtn">Section 2</a>
+			<a href="#" id="s3" class="subNavBtn">Section 3</a>
+			<a href="#" id="s4" class="subNavBtn">Section 4</a>
+			<a href="#" id="s5" class="subNavBtn end">Section 5</a>
+		</div>
+		
+	</div>
+
+
+	<div class="section sTop">
+		<div class="inner" id="topDiv">
+			<div class="logoDiv">
+				<h1 id="wojtk">WoJtK</h1>
+			</div>
+			<div class="headerLink" style="width:310px; height:250px;">
+			<div class="decoDivText"><h1>WoJtK</h1><p>What we can do for you.</p></div>
+			<div class="decoDivColor"></div>
+			</div>
+			<div class="headerLink" style="width:280px; height:250px;">
+			<div class="decoDivText"><h1>The boss</h1><p>All hail the founder!</p></div>
+			<div class="decoDivColor"></div>
+			</div>
+			<div class="headerLink" style="width:500px; height:250px;">
+			<div class="decoDivText"><h1>Arenankalkylator</h1><p>Need to calculate your build? It's up to date!</p></div>
+			<div class="decoDivColor"></div>
+			</div>
+			<div class="headerLink" style="width:450px; height:150px;">
+			<div class="decoDivText"><h1>Previous work</h1><p>Links, info and more.</p></div>
+			<div class="decoDivColor"></div>
+			</div>
+			<div class="headerLink" style="width:340px; height:150px;">
+			<div class="decoDivText"><h1>Tales</h1><p>Once upon a time...</p></div>
+			<div class="decoDivColor"></div>
+			</div>
+			<div class="headerLink" style="width:300px; height:150px;">
+			<div class="decoDivText"><h1>Contact</h1><p>You found it. Lets talk!</p></div>
+			<div class="decoDivColor"></div>
+			</div>
+		</div>
+		<br class="clear">
+	</div>
+
+
+	<div class="section s1">
+		<div class="inner">
+
+			<h1>Section 1</h1>
+
+		</div>
+	</div>
+
+	<div class="section s2">
+		<div class="inner">
+
+			<h1>Section 2</h1>
+
+		</div>
+	</div>
+
+	<div class="section s3">
+		<div class="inner">
+
+		<h1>Section 3</h1>
+
+		</div>
+	</div>
+
+	<div class="section s4">
+		<div class="inner">
+
+			<h1>Section 4</h1>
+
+		</div>
+	</div>
+
+	<div class="section s5">
+		<div class="inner">
+		
+		<h1>Section 5</h1>
+		
+		</div>
+	</div>
+	<div id="results" style="height:200px; background-color:red;">
+		<button id="knapp">tryck</button>
+	</div>
+
+</div>
+<script>
+$(".headerLink").hover(function(){
+    $(".decoDivColor", this).stop(true, false).animate({ height: "78px" }, 250);
+}, function() {
+    $(".decoDivColor", this).stop(true, false).animate({ height: "7px" }, 250);
+});
+</script>
+<script>
+$(document).ready(function() {
+	$('#knapp').click(function(){
+		$.ajax({
+		  url: "http://battle.net",
+		  cache: false,
+		  success: function(html){
+			$("#results").append(html);
+		  }
+		});
+	});
+});
+</script>
+</body>
+</html>

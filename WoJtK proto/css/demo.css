@@ -1,0 +1,208 @@
+﻿* {margin: 0; padding: 0; outline: 0;}
+
+body {
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	color: #999;
+	font-size: 12px;
+	background:#000000;
+}
+
+h1 {
+	font-size: 36px;
+	font-family:"Times New Roman",Georgia,Serif;
+	letter-spacing: 1px;
+	line-height: 100%;
+	color:#FFFFFF;
+	text-shadow:2px 2px 1px rgba(0,0,0,0.4);
+	margin:0px;
+}
+
+h1.title {
+	font-size: 46px;
+	font-weight: 700;
+	color: #6a6a6a;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+p {
+	margin: 0 0 15px 0;
+}
+
+.headerLink {
+	background-color:#222222;
+	margin-bottom:13px;
+	margin-left:13px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	position:relative;
+	float:left;
+}
+
+.decoDivText {
+	height:68px;
+	width:100%;
+	position:absolute; 
+	bottom:0;
+	overflow:hidden;
+	padding-top:8px;
+	z-index:2;
+	padding-left:5px;
+	}
+.decoDivText p {
+	font-family:"Times New Roman",Georgia,Serif;
+	color:#FFFFFF;
+	text-shadow:2px 2px 1px rgba(0,0,0,0.4);
+	margin:0px;
+}
+.decoDivColor {
+background-color:#ff7c00;
+height:8px;
+position:absolute;
+width:100%;
+bottom:0;
+z-index:1;
+}
+
+.menuBtn {
+	background: center center no-repeat transparent;
+	background: #000;
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 10px;
+}
+
+.active {
+	background: #333365;
+}
+.clear {
+	clear: both;
+}
+.wrap {
+		width: 100%;
+		max-width: 1140px;
+		min-width: 960px;
+		z-index: 10;
+		position: relative;
+		margin: 0 auto;
+		padding: 0;
+}
+
+.section {
+	width: 100%;
+	max-width: 1140px;
+	min-width: 960px;
+	z-index: 10;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+}
+
+.inner {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	min-height: 50px;
+	padding:30px 0;
+	font-size: 18px;
+	font-weight: 300;
+	padding:30px 0;
+}
+.inner#mMenu {
+	width:960px;
+}
+
+/* This is the selector i used for my menu, it needs to be set as position:absolute; */
+.subMenu {
+	position: absolute;
+	top: 100px;
+	height: 50px;
+	z-index: 1000;
+	width: 100%;
+	max-width: 1140px;
+	min-width: 960px;
+	background: #333333;
+}
+
+.subMenu a:hover {
+background: #333345;
+} 
+
+.subMenu .inner {
+	padding:0;
+	font-weight: 400;
+}
+
+.subNavBtn {
+	display: block;
+	height: 33px;
+	width: 12%;
+	float: left;
+	margin: 0px;
+	text-decoration: none;
+	font-size: 14px;
+	padding: 17px 2% 0 2%;
+	text-align: center;
+	color: #ff7c00;
+	font-weight:bold;
+}
+
+.end {
+	margin: 0;
+}
+
+
+/* SECTIONS */
+/* TOP */
+.sTop {
+	height: auto;
+	color:#3d3d3d;
+}
+
+#topDiv {
+	background-position:right top;
+	min-height:500px;
+}
+
+.logoDiv {
+	width:100%;
+	height:130px;
+}
+	
+/* TOP END */
+/* S1 */
+.s1 {
+	min-height: 500px;
+	background: #2e2e2e;
+}
+
+
+.s2 {
+	min-height: 500px;
+	background: #3f3f3f;
+}
+
+
+.s3 {
+	min-height: 500px;
+	background: #504f4f;
+}
+
+
+.s4 {
+	min-height: 500px;
+	background: #6e87a1;
+	color: white;
+}
+
+.s5 {
+	min-height: 500px;
+	background: #293b4d;
+	color: white;
+}
+

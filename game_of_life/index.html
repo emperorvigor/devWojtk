@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script src="main.js"></script>
+		<style>
+			* { margin:0;padding:0; }
+			div { background-color:lightgrey; width:10px; height:10px; float:left; }
+			.life { background-color:yellow; }
+			/*#gameboard { width:120px; height:120px; }*/
+		</style>
+	</head>
+	<body>
+		<h1>The Game of Life</h1>
+		<button onClick="setInterval(testArray, 200)">Click to begin</button><!--<button onClick="changeGridElement(3,6)">3-6</button><br /><br /><!-- populateLife(27,27) --> -->
+		<div id="gameboard">
+		</div>
+		<script>
+			// self executing function here
+			(function() {
+			   populateLife(12, 12);
+			})();
+		</script>
+	</body>
+</html>

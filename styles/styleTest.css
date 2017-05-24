@@ -1,0 +1,102 @@
+#lol {
+text-align:center;
+color:red;
+}
+#testPara {
+color:blue;
+}
+h1 {
+margin:0;
+}
+.center {
+color:black;
+}
+a {
+text-decoration:none;
+}
+a:link {
+background-color:#B2FF99;
+}
+a:visited {
+background-color:#FFFF85;
+}
+a:hover {
+background-color:#FF704D;
+}
+a:active {
+background-color:#FF704D;
+}
+#footer {
+text-decoration:purple;
+}
+table {
+padding:5px;
+border: 1px solid black;
+width:100%;
+}
+td {
+padding:5px;
+border:1px solid black;
+}
+div {
+border: 1px solid rgba(255, 0, 0, 0);
+/*border:1px solid red;*/
+}
+#headerDiv {
+margin-top:18px;
+}
+#footerDiv { margin-top:0px; width:100%; height:50px; position:relative; }
+
+#contentDiv {
+text-align:center;
+width:902px;
+height:589px;
+margin-left: auto;
+margin-right: auto;
+background-image:url("../img/Widar_beach_blackNwhite_homepage.png");
+background-repeat:no-repeat;
+background-position:center
+}
+div.infoDivs  p {
+margin:30px 40px;
+font-weight:bold;
+overflow:visable;
+}
+#left-content {
+width:28%;
+float:left;
+height:81.3%;
+display:inline;
+}
+#right-content {
+width:28%;
+float:right;
+height:81.3%;
+}
+#center-content {
+margin-left: auto;
+margin-right: auto;
+width:38%;
+float:none;
+height:auto;
+overflow:visable;
+}
+div.contentDivs {
+/*opacity:0.6;
+filter:alpha(opacity=60); /* For IE8 and earlier */
+background-color:rgba(255, 255, 252, 0.8);
+position:relative;
+border:0px solid;
+border-radius:25px;
+box-shadow: 0px 5px 5px #888888;
+}
+html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+canvas { display:block; margin:0; padding:0;} /* To remove the scrollbars */
+#myCanvas { height:0px; width:0px;}
+
+#picSwitchDiv {
+background-repeat:no-repeat;
+background-position:center;
+margin-left: auto;
+margin-right: auto;
+}

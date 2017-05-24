@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="styles/styleTest.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+	changePicture();
+
+	
+	function changePicture() {
+       setTimeout(changePicture,4500);
+	   var i = Math.ceil(Math.random() * 7);
+	var x = Math.ceil(Math.random() * 30) + 3;
+	   console.log("url('img/imgSlide/" + i + ".jpg')");
+       $("#picSwitchDiv").css("background-image","url('img/imgSlide/" + i + ".jpg')");
+	   $("#picSwitchDiv").animate({
+                        height: i*x+390 + 'px',
+                        width: i*x+280 + 'px',
+						//backgroundPosition: 'center center'
+						});
+						
+	   if(i===8){i=1}
+    }
+});
+</script>
+</head>
+<body>
+<div id="contentDiv">
+<div id="headerDiv">
+<h1>Simpelt bildspel för en labb...</h1
+</div>
+<div id="picSwitchDiv" class="contentDivs">
+</div>
+</div>
+</body>
+</html>

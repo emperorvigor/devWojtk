@@ -1,0 +1,221 @@
+﻿
+
+a:hover, a:active, a:link, a:visited {
+text-decoration:none;
+}
+
+#leftHeaderDiv a:hover,#leftHeaderDiv a:active,#leftHeaderDiv a:link,#leftHeaderDiv a:visited {
+color:#a5050d;
+}
+
+div {
+}
+
+body {
+font-family: 'Julius Sans One', sans-serif;
+background-color:#f3c49a;
+}
+
+h1  {
+font-size:73px;
+color:#a5050d;
+text-align:right;
+font-weight:bold;
+font-family: 'Ubuntu', sans-serif;
+}
+
+h2 {
+font-family:'Ruluko', sans-serif;
+}
+
+h3 {
+font-size:30px;
+color:#a5050d;
+text-align:left;
+font-weight:bold;
+font-family: 'Ubuntu', sans-serif;
+}
+p {
+font-family: 'Ubuntu', sans-serif;
+}
+
+#seedsPara {
+text-align:left bottom;
+margin-top:100px;
+font-weight:bold;
+font-size:42px;
+color:#a5050d;
+}
+
+#headerDiv {
+width:100%;
+height:130px;
+margin-top:15px;
+margin-bottom:10px;
+}
+#gohortaSeedsDiv {
+margin-top:25px;
+}
+#rightHeaderDiv {
+float:right;
+height:100%;
+width:15%;
+background-image:url('../img/layout/gohorta_logo_right.png');
+background-repeat:no-repeat;
+background-position:right top;
+margin-right:50px;
+}
+#leftHeaderDiv {
+float:left;
+height:100%;
+width:69%;
+background-image:url('../img/layout/gohorta_logo_left.png');
+background-repeat:no-repeat;
+margin-left:50px;
+}
+
+#langIMG {
+margin-left: auto;
+margin-right: auto;
+border:0px;
+height:18px;
+width:18px;
+}
+#welcomePic {
+margin-left:auto;
+margin-right:auto;
+display:block;
+border:0px solid;
+box-shadow:0px 5px 15px black;
+margin-bottom:15px;
+}
+
+#mainDiv {
+width:1000px;
+margin-left:auto;
+margin-right:auto;
+}
+
+#contentDiv {
+background-color:#8dd9d7;
+margin-top:10px;
+margin-bottom:-15px;
+padding-top:40px;
+padding-bottom:10px;
+text-align:center;
+font-size:60px;
+}
+#contentText {
+text-align:center;
+font-size:60px;
+margin-top:0px;
+margin-bottom:0px;
+}
+
+#menuDiv {
+text-align:center;
+background-color:#0b3f4c;
+}
+
+#footerDiv {
+width:100%;
+height:30px;
+padding-top:1px;
+padding-bottom:15px;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+font-size:14px;
+background-color:#0b3f4c;
+color:white;
+}
+#footerDiv ul {
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+text-align:center;
+display: block;
+display: inline-block;
+<!--[if lt IE 8]>
+ul.menu li { display: inline }
+<![endif]-->
+}
+#footerDiv li {
+border-right:2px solid white;
+margin:13px 0px 0px 0px;
+float:left;
+padding:0px 13px 0px 13px;
+}
+#footerDiv li:last-child {
+border-right:2px solid #0b3f4c;
+}
+#footerDiv a:hover,#footerDiv a:active,#footerDiv a:link,#footerDiv a:visited {
+text-decoration:none;
+font-weight:bold;
+color:white;
+}
+
+.productDiv {
+background-color:white;
+box-shadow:0px 5px 15px black;
+margin:-15px 40px 35px 40px;
+text-align:left;
+padding: 10px;
+border:1px solid black;
+border-radius:3px;
+height:193px;
+}
+
+.productDiv h1 {
+font-size:28px;
+font-weight:bold;
+text-align:left;
+}
+.productDiv p {
+font-size:20px;
+}
+.productDiv a {
+font-size:16px;
+font-weight:bold;
+color:#a5050d;
+margin-top:5px;
+display:block;
+}
+.productTextDiv {
+float:left;
+width:50%;
+margin-top:15px;
+}
+.productPic {
+border:2px solid black;
+border-radius:3px;
+position:relative;
+float:left;
+margin-right:26px;
+z-index:0;
+}
+.purchaseChoiceDiv {
+margin-left:10px;
+}
+.purchaseChoiceDiv  form{
+font-size:16px;
+font-weight:bold;
+text-align:right;
+}
+.purchaseChoiceDiv table {
+float:right;
+}
+.purchaseChoiceDiv input[type="text"] {
+border:1px solid black;
+border-radius:3px;
+}
+.purchaseChoiceDiv input[type="submit"] {
+padding:3px;
+font-weight:bold;
+border:1px solid black;
+border-radius:3px;
+}
+.purchaseChoiceDiv input[type="submit"]:hover {
+background-color:lightgray;
+}

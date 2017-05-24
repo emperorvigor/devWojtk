@@ -1,0 +1,206 @@
+<html>
+	<header>
+		<meta charset="UTF-8"> 
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="main.js"></script>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</header>
+	<body ng-app="mainJS">
+		<div id="content"><!--
+			<div>
+				<div id="participants">
+					<div class="row one">
+						<div class="column headline">Namn</div>
+						<div class="column headline">Vapen</div>
+						<div class="column headline">Rustning</div>
+						<div class="column headline min">Handlingar</div>
+						<div class="column headline min">StridsP</div>
+						<div class="column headline min">KP</div>
+						<div class="column headline min">Styrka</div>
+						<div class="column headline min">Initiativ</div>
+					</div>
+					<div class="row two">
+						<div class="column">Leikfaar Ormkrona</div>
+						<div class="column">Dolk<br/ >Dolk</div>
+						<div class="column">Härdat läder</div>
+						<div class="column min">4</div>
+						<div class="column min">27</div>
+						<div class="column min">32</div>
+						<div class="column min">-4</div>
+						<div class="column min">-5</div>
+					</div>
+					<div class="row three even">
+						<div class="column">Bjorn Stormdrake</div>
+						<div class="column">Pilbåge</div>
+						<div class="column">Härdat läder</div>
+						<div class="column min">3</div>
+						<div class="column min">33</div>
+						<div class="column min">34</div>
+						<div class="column min">+2</div>
+						<div class="column min">-5</div>
+				   </div>
+				   <div class="row four">
+						<div class="column">Siri</div>
+						<div class="column">Dolk</div>
+						<div class="column">Tyg</div>
+						<div class="column min">2</div>
+						<div class="column min">14</div>
+						<div class="column min">32</div>
+						<div class="column min">-4</div>
+						<div class="column min">-3</div>
+				   </div>
+				</div>
+				<div class="button" id="addChar">Lägg till karaktär
+				</div>
+<!-- ----------------------------INI SEGMENT---------------------------- ->
+				<div id="containerOfTargets">
+					<h1>Segment 1</h1>
+					<div id="targets">
+						<div class="row one">
+							<div class="column headline tiny">Ini</div>
+							<div class="column headline">Namn</div>
+							<div class="column headline">Attackerar</div>
+							<div class="column headline min">Handlingar</div>
+							<div class="column headline min">StridsP</div>
+						</div>
+						<div class="row two">
+							<div class="column tiny">9</div>
+							<div class="column">Leikfaar Ormkrona</div>
+							<div class="column">
+								<select>
+									<option value="1">Siri</option>
+									<option value="2">Bjorn Stormdrake</option>
+								</select>
+							</div>
+							<div class="column min"><input id="handlingar" /></div>
+							<div class="column min"><input id="stridsp" /></div>
+						</div>
+						<div class="row three even">
+							<div class="column tiny">6</div>
+							<div class="column">Bjorn Stormdrake</div>
+							<div class="column">
+								<select>
+									<option value="1">Leikfaar Ormkrona</option>
+									<option value="2">Siri</option>
+								</select></div>
+							<div class="column min">3</div>
+							<div class="column min">3</div>
+					   </div>
+					   <div class="row four">
+							<div class="column tiny">3</div>
+							<div class="column">Siri</div>
+							<div class="column">
+								<select>
+									<option value="1">Leikfaar Ormkrona</option>
+									<option value="2">Bjorn Stormdrake</option>
+								</select>
+							</div>
+							<div class="column min">2</div>
+							<div class="column min">2</div>
+							<div class="column tiny">
+								<div class="passat">P</div>
+								<div class="handlat">H</div>
+							</div>
+					   </div>
+					</div>
+				</div>
+				<div id="segNav">
+					<div class="button min" id="prevSeg"><<
+					</div>
+					<div class="button min" id="newSeg">Nytt segment
+					</div>
+					<div class="button min" id="nextSeg">>>
+					</div>
+				</div>
+				<div class="button" id="newIni">Nytt initiativ
+				</div>
+			</div>
+			<div style="height:100px;width:100%;margin-bottom:100px;border:5px solid black;border-style:none none solid none;">
+			</div>-->
+<!-- ----------------------------ANGULAR---------------------------- -->
+		<div id="content" ng-controller="dataCtrl">
+			<div ng-controller="functionsCtrl">
+				<div id="participants">
+					<div class="row one">
+						<div class="column headline">Namn</div>
+						<div class="column headline">Vapen</div>
+						<div class="column headline">Rustning</div>
+						<div class="column headline min">Handlingar</div>
+						<div class="column headline min">StridsP</div>
+						<div class="column headline min">KP</div>
+						<div class="column headline min">Styrka</div>
+						<div class="column headline min">Initiativ</div>
+					</div>
+					<div ng-repeat="char in chars">
+						<div class="row" ng-class-odd="'odd'" ng-class-even="'even'" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+							<div class="column">{{char.name}} <!--<img class="editPen" ng-show="hoverEdit" src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png"/>--></div>
+							<div class="column"><input ng-model="char.weapon" placeholder="{{char.weapon}}" /> <!--<img class="editPen" ng-show="hoverEdit" src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png"/>--></div>
+							<div class="column"><input ng-model="char.armor" placeholder="{{char.armor}}" /> <!--<img class="editPen" ng-show="hoverEdit" src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png"/>--></div>
+							<div class="column min"><input ng-model="char.actions" placeholder="{{char.actions}}" /><!--{{char.actions}} <img class="editPen" ng-show="hoverEdit" src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png"/>--></div>
+							<div class="column min"><input ng-model="char.combatpoints" placeholder="{{char.combatpoints}}" /><!--{{char.combatpoints}} <img class="editPen" ng-show="hoverEdit" src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png"/>--></div>
+							<div class="column min"><input ng-model="char.hp" placeholder="{{char.hp}}" /><!--{{char.hp}}<!-- <img class="editPen" ng-show="hoverEdit" src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png"/>--></div>
+							<div class="column min"><input ng-model="char.strength" placeholder="{{char.strength}}" /><!--{{char.strength}} <!--<img class="editPen" ng-show="hoverEdit" src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png"/>--></div>
+							<div class="column min"><input style="width:80%;" ng-model="char.char" placeholder="{{char.char}}" /><!--{{char.char}} --><img class="editPen" ng-show="hoverEdit" ng-click="removeChar($index)" src="http://www.nexcius.net/wp-content/uploads/2013/05/error_512-150x150.png"/></div>
+						</div>
+					</div>
+					<div class="row" ng-show="showAddChar">
+						<div class="column"><input placeholder="Namn" ng-model="addName"/></div>
+						<div class="column"><input placeholder="Vapen" ng-model="addWeapon"/></div>
+						<div class="column"><input placeholder="Rustning" ng-model="addArmor"/></div>
+						<div class="column min"><input placeholder="Handlingar" ng-model="addActions"/></div>
+						<div class="column min"><input placeholder="Stridspoäng" ng-model="addCombatpoints"/></div>
+						<div class="column min"><input placeholder="Kroppspoäng" ng-model="addHP"/></div>
+						<div class="column min"><input placeholder="Styrka" ng-model="addStrength"/></div>
+						<div class="column min"><input placeholder="Initiativ" type="number" ng-model="addchar"/></div>
+					</div>
+				</div>
+				<div class="button" id="addCharNow" ng-click="addChar()" ng-show="showAddChar">Lägg till {{addName}}
+				</div>
+				<div class="button" id="cancel" ng-click="showAddChar=!showAddChar" ng-show="showAddChar">Avbryt
+				</div>
+				<div class="button" id="addChar" ng-click="showAddChar=!showAddChar" ng-show="!showAddChar">Lägg till karaktär
+				</div>
+				<div id="containerOfTargets">
+					<h1>Segment 1</h1>
+					<div id="targets">
+						<div class="row one">
+							<div class="column headline tiny">Ini</div>
+							<div class="column headline">Namn</div>
+							<div class="column headline">Attackerar</div>
+							<div class="column headline min">Handlingar</div>
+							<div class="column headline min">StridsP</div>
+						</div>
+						<div ng-repeat="char in chars | orderBy:['-ini','-iniTwo','-iniThree']">
+							<div class="row" ng-class-odd="'odd'" ng-class-even="'even'">
+								<div class="column tiny">
+									<abbr title="{{char.ini}} | {{char.iniTwo}} | {{char.iniThree}}">{{char.ini}}
+								</div>
+								<div class="column">{{char.name}}</div>
+								<div class="column">
+									<select ng-model="attackedChar" ng-options="char.name for char in chars track by char.id">
+									</select>
+								</div>
+								<div class="column min"><input id="handlingar" placeholder="{{char.actions}}" /></div>
+								<div class="column min"><input id="stridsp" placeholder="{{char.combatpoints}}" /></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="segNav">
+					<div class="button min" id="prevSeg"><<
+					</div>
+					<div class="button min" id="newSeg">Nytt segment
+					</div>
+					<div class="button min" id="nextSeg">>>
+					</div>
+				</div>
+				<div class="button" id="newIni" ng-click="newInitiative()">Nytt initiativ
+				</div>
+			</div>
+			
+			<footer>
+				<span>Design by WoJtK ©2016</span>
+			</footer>
+		</div>
+	</body>
+</html>

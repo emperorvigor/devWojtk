@@ -1,0 +1,36 @@
+* {
+ margin: 0px;
+ padding: 0px;
+ border: 0px;
+ }
+ 
+div { border: 1px solid black; }
+
+a { text-decoration: none; }
+
+#mainContent { margin:0px auto; max-width:1000px; }
+
+.gameNav { width:92%; background-image: url('side-bg.png'); padding:5px; z-index: 10; visibility:visible; transition: left 0.3s, visibility 0.27s, width 0.3s; }
+
+#gameMenuLeft { float:left; }
+#gameMenuLeft ul  li  ul { display:none; }
+#gameMenuLeft ul a:active li ul { display:block; }
+
+#gameMenuRight { float:right; }
+
+#mainView { width:60%; min-height:535px; margin: 0px auto; z-index: 1; transition: width 0.3s;}
+#mainView p { z-index:1; }
+
+#actionBoard { min-height:30px; }
+#actionBoard img { height:30px; width:auto; display:none; cursor:pointer; }
+#leftMenuPic { float:left; } 
+#rightMenuPic{ float:right; } 
+
+ul { margin:5px; list-style-type: none;}
+li { margin:5px; }
+
+ @media screen and (max-width: 800px) {
+.gameNav { width:0px; overflow:hidden; visibility: hidden; position:absolute; }
+#mainView { width: 100%; }
+#actionBoard img { display:block; }
+ }

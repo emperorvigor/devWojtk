@@ -1,0 +1,188 @@
+body, div, span, td.difftable {
+	cursor: default;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #D8D8D8;
+	background-color: #2E0000;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+h1, h2, h3, h4, h5 {
+	color: #FFC000;
+}
+
+a {
+	color: #FFC000;
+}
+
+div#main {
+	width: 100%;
+	text-align: center;
+}
+
+div#subtitle {
+	margin-top: -15px;
+}
+
+td.ptrcolor, span.ptrcolor {
+	color: #70AD47;
+}
+
+div#tablediv {
+	display: inline-block;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td.difftable {
+	text-align: center;
+	font-size: 0.9em;
+	border: 1px solid #680000;
+	padding: 3px;
+	white-space: nowrap;
+}
+
+td.difftable.darker {
+	background-color: #260000;
+}
+
+td.difftable.top {
+	color: #FFC000;
+	font-weight: bold;
+	border-top: 0px;
+}
+
+td.difftable.left {
+	color: #FFC000;
+	font-weight: bold;
+	text-align: right;
+	border-left: 0px;
+}
+
+td.difftable.last-col, td.col-t13 {
+	border-right: 0px;
+}
+
+td.difftable.last-row {
+	border-bottom: 0px;
+}
+
+tr.hiddenRow, td.hiddenCol, input.hidden, div.hidden {
+	display: none;
+}
+
+div#legend {
+	text-align: left;
+	display: inline-block;
+}
+
+span.legend {
+	font-size: 0.8em;
+}
+
+div#bottom-box {
+	z-index: 5;
+	width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+div#customize-button {
+	display: inline-block;
+	font-weight: bold;
+	background-color: #D8D8D8;
+	color: black;
+    bottom: 0px;
+    height: 1em;
+	padding: 0.5em;
+	padding-right: 1em;
+	padding-left: 1em;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	cursor: pointer;
+}
+
+div#customize-content {
+	background-color: #2E0000;
+	color: black;
+    bottom: 0px;
+	border-top: 8px solid #D8D8D8;
+	padding-bottom: 20px;
+}
+
+div.buttonrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input.unhidecol, input.unhiderow {
+	background-color: #680000;
+	color: #D8D8D8;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	padding-bottom: 20px;
+	height: 40px;
+	outline: none;
+}
+
+input.yes {
+	background-image: url('yes-c.png');
+}
+
+input.no {
+	background-image: url('no-c.png');
+}
+
+/* changed */
+.left {
+	position: absolute;
+	width: 3.4em;
+	margin-left: -1px;
+}
+
+.col-gr {
+	padding-left: 4em !important;
+}
+
+#valuetable {
+	margin: 0px auto;
+}
+
+td.top.left {
+	height: 2.5em;
+}
+@media screen and (max-width: 737px){
+	div#tablediv {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		width: 100%;
+	}
+}
+
+@media screen and (max-device-width: 737px){
+	div#tablediv {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		width: 100%;
+	}
+	td.difftable {
+		text-align: center;
+		font-size: 2em;
+	}
+	td.difftable {
+	border: 0.1em solid #680000;
+}
+/* stop */

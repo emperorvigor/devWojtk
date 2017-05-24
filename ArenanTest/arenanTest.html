@@ -1,0 +1,139 @@
+﻿<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="arenanStyle.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				
+				$("#leftMenuPic").click(function(){
+				var w = $(window).width();
+					if( $("#gameMenuLeft").css('visibility') == 'hidden') {
+						$("#gameMenuLeft").css('visibility', 'visible');
+						$("#gameMenuLeft").css('position', 'absolute');
+						$("#gameMenuLeft").css('width', '190px');
+						$("#gameMenuRight").css('left', w);
+						$("#gameMenuRight").css('width', '0px');
+						$("#gameMenuRight").css('visibility', 'hidden');
+					} else {
+						$("#gameMenuLeft").css('width', '0px');
+						$("#gameMenuLeft").css('visibility', 'hidden');
+					}
+					});
+				$("#rightMenuPic").click(function(){
+				var w = $(window).width();
+					if( $("#gameMenuRight").css('visibility') == 'hidden') {
+						$("#gameMenuRight").css('visibility', 'visible');
+						$("#gameMenuRight").css('position', 'absolute');
+						$("#gameMenuRight").css('width', '190px');
+						$("#gameMenuRight").css('left', w-205);
+						$("#gameMenuLeft").css('width', '0px');
+						$("#gameMenuLeft").css('visibility', 'hidden');
+					} else {
+						$("#gameMenuRight").css('width', '0px');
+						$("#gameMenuRight").css('visibility', 'hidden');
+						$("#gameMenuRight").css('left', w);
+					}
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="mainContent">
+			<div id="actionBoard">
+				<img id="leftMenuPic" src="menuPic.png" />
+				<img id="rightMenuPic" src="menuPic.png" />
+				<p>Rulltopictexter mm...</p>
+			</div>
+			
+				<div id="gameMenuRight" class="gameNav">
+					Min gladiator<br />
+					<img id="picDiv" src="Tyl-Jaiden.jpg" /><br />
+					Namn<br />
+					Fanatiska Tyl Jaiden<br /><br />
+					Grad 	17<br />
+					KP 	47/129<br />
+					EP 	(184) 15116<br />
+					Tid 	95 rundor<br />
+					Mynt 	391 sm<br />
+					Form  	97%<br />
+					<ul>
+						<li>Info</li>
+						<li>Biografi</li>
+						<li>Egenskaper</li>
+						<li>Historia</li>
+						<li>Statistik</li>
+						<li>Utrustning</li>
+					</ul>
+					Slut
+				</div>
+			
+			
+				<div id="gameMenuLeft" class="gameNav">
+					Vänster
+					<ul>
+						<li>Arenan
+							<ul>
+								<li>Lagspel</li>
+								<li>Slumpdueller</li>
+								<li>Turneringar</li>
+								<li>Utmaningar</li>
+								<li>Bestar</li>
+							</ul>
+						</li>
+						<li>Klanerna
+							<ul>
+								<li>Klaner</li>
+								<li>Klanstrider</li>
+								<li>Min klan</li>
+							</ul>
+						</li>
+						<li>Marknaden
+							<ul>
+								<li>Köpmän</li>
+								<li>Auktioner</li>
+								<li>Min arsenal</li>
+							</ul>
+						</li>
+						<li>Staden
+							<ul>
+								<li>banken</li>
+								<li>Förtäljare</li>
+								<li>Kejsarförrådet</li>
+								<li>Kneg</li>
+								<li>Verkstaden</li>
+								<li>Värdshuset</li>
+								<li>Sök gladiator</li>
+								<li>Ärans sal</li>
+							</ul>
+						</li>
+					</ul>
+					Slut
+				</div>
+			
+			<div id="mainView">
+				<p>Lagspel med mer här!</p>
+			</div>
+		</div>
+
+		<script>
+		$(window).on('load resize', function () {
+			var w = $(window).width();
+			if (w > 800 ) {
+				$(".gameNav").css('visibility', 'visible');
+				$(".gameNav").css('width', '19%');
+				$(".gameNav").css('position', 'relative');
+				$("#gameMenuRight").css('left', 0);
+			} else {
+				$(".gameNav").css('width', '0%');
+				$(".gameNav").css('visibility', 'hidden');
+				$("#gameMenuRight").css('left', w);
+				$("#gameMenuRight").css('height', '550px');
+			}
+			
+			
+			
+			});
+		</script>
+	</body>
+</html>

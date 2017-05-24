@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles/styleTest.css">
+<script>
+var context;
+var x=100;
+var y=200;
+var dx=5;
+var dy=5;
+
+function init()
+{
+  context = singleBallCanvas.getContext('2d');
+  setInterval(draw,1);
+}
+
+function draw()
+{
+	var width=window.innerWidth;
+	var height=window.innerHeight;
+	var canvas = document.getElementById('singleBallCanvas');
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	
+	context.clearRect(0,0, width,height);
+	context.beginPath();
+	context.arc(x,y,10,0,Math.PI*2,true);
+	if( (y<height*0.3 || y>height*0.7) || (x<width*0.3 || x>width*0.7) /*&& (x>height*0.3 || x<height*0.7) && (x>width*0.3 || x<width*0.7)*/){ context.fillStyle="#000000"; console.log("true:");}
+  else {context.fillStyle="#ff00ff"; console.log("I elsesatsen");}
+  // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
+  //om höjden är högre än 200 men mindre än 800 OCH bredden är högre än 200 men mindre än 800, bli lila
+  context.closePath();
+  context.fill();
+    // Boundary Logic
+if( x<15 || x>width-35) dx=-dx; 
+if( y<15 || y>height-35) dy=-dy;
+x+=dx;
+y+=dy;
+}
+</script>
+</head>
+
+<body onLoad="init();">
+  <canvas id="singleBallCanvas">
+  </canvas>
+</body>
+</html>

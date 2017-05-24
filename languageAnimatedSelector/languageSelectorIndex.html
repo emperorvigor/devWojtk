@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin:0; padding:0; }
+#content { width:500px;height:500px; border:1px solid grey; border-radius:100%; position:relative; left:10%;
+background-image:url('valplast-indexsida-bild.png'); background-size:100%; }
+.item { position:absolute; width:20%;height:20%; background-color:lightgrey; border-radius:100%; border:1px solid grey;}
+.item img { width:100%; height:auto; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+function adjustContent(firstTime){
+	
+    var items = $('.item'), content = $('#content'),
+        width = content.width(), height = content.height(),
+        angle = 0, step = (2*Math.PI) / items.length;
+	
+	var radius = content.width()/2;
+		
+	var first = firstTime;
+		
+	items.each(function() {
+		var x = Math.round(width/2 + radius * Math.cos(angle) - $(this).width()/2);
+		var y = Math.round(height/2 + radius * Math.sin(angle) - $(this).height()/2);
+		
+		/* animation bör bara användas i början vid doc ready!! */
+		if(first){
+			$( this ).animate({
+				left: x + 'px',
+				top: y + 'px'
+			  }, 1500 );
+			firstTime = false;
+		} else {
+			$(this).css('left', x + 'px');
+			$(this).css('top', y + 'px');
+		}
+		
+		angle += step;
+	});
+};
+
+$( window ).resize(function() {
+	setWidthHeight();
+	adjustContent(false);
+});
+</script>
+</head>
+<body>
+<div style="width:100%;height:100%;">
+	<div id="content">
+	</div>
+</div>
+<script>
+	function setWidthHeight(){
+		var i, j;
+		if($(window).height()<$(window).width()){
+			i = $(window).height();
+		} else {
+			i = $(window).width();
+		}
+		j = i*0.7;
+		$( '#content' ).css( "width", j );
+		$( '#content' ).css( "height", j );
+		
+		$('#content').css("top", $(window).height()*0.5-j/2);
+		$('#content').css("left", $(window).width()*0.5-j/2);
+		
+		$( '.item' ).css( "top", (j-$('.item').width())/2);
+		$( '.item' ).css( "left", (j-$('.item').width())/2);
+	};
+	$(document).ready(function(){
+		
+		var itemArray = [ "china", "sweden", "usa", "mexico", "germany" ];
+		
+		for	(var i = 0; i < itemArray.length; i++) {
+			$( "#content" ).append( "<div class='item'><img src='flaggor/" + itemArray[i] + ".png' /></div>" );
+		};
+		
+		setWidthHeight();
+		adjustContent(true);
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<!--
+
+
+STOP LOOKING AT MY UGLY CODE, SUCKER!
+THERE'S NOTHING TO SEE HERE ANYWAYS!
+
+This was a quick hack to get into Jquery and stuff, never really used it.
+If you have complaints, criticism, questions, advice, or anything else to say, contact me on
+Diablofans, username Bagstone (http://www.diablofans.com/user/87517-bagstone/)
+
+If you steal this code, Belial will torture and kill 100 kittens, so think twice.
+Besides, the code is ugly and bad, so don't do it, it's better that way, trust me.
+
+
+-->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Diablo 3 Difficulty Overview</title>
+<link rel="stylesheet" type="text/css" href="main-style.css" />
+<script src="./jquery-3.0.0.min.js"></script>
+</head>
+<body>
+<div id="main">
+
+<div class="centered"><h2>Diablo 3: Reaper of Souls - Difficulty Overview</h2></div>
+<div class="centered" id="subtitle"><span>(Patch 2.4.2 - Season/Era 7)</span></div>
+
+<br />
+
+<div id="tablediv">
+<table class="difftable" id="valuetable"><!-- <- added id -->
+	<tr class="difftable">
+		<td class="difftable top left"></td>
+		<td class="difftable col-gr top selector" id="gr">GR</td>
+		<td class="difftable col-hp top selector" id="hp">Monster<br />health</td>
+		<td class="difftable col-dmg top selector" id="dmg">Monster<br />damage</td>
+		<td class="difftable col-xp top selector" id="xp">+ XP</td>
+		<td class="difftable col-gold top selector" id="gold">+ Gold</td>
+		<td class="difftable col-leg top selector" id="leg">Leg.<br />drop</td>
+		<td class="difftable col-legrift top selector" id="legrift">Leg.<br />(rift)</td>
+		<td class="difftable col-db top selector" id="db">Death's<br />Breath</td>
+		<td class="difftable col-key top selector ptrcolor" id="key">GR Key</td>
+		<td class="difftable col-cachemats top selector" id="cachemats">Cache<br />mats</td>
+		<td class="difftable col-cachelegs top selector" id="cachelegs">Cache<br />legs</td>
+		<td class="difftable col-machines top selector" id="machines">Machine<br />drop</td>
+		<td class="difftable col-organs top selector right" id="organs">Organ<br />drop</td>
+	</tr>
+	<tr class="difftable" id="row-normal">
+		<td class="difftable left diff row-normal" id="normal">Normal</td>
+		<td class="difftable col-gr row-normal">-</td>
+		<td class="difftable col-hp row-normal">100%</td>
+		<td class="difftable col-dmg row-normal">100%</td>
+		<td class="difftable col-xp row-normal">0%</td>
+		<td class="difftable col-gold row-normal">0%</td>
+		<td class="difftable col-leg row-normal">0%</td>
+		<td class="difftable col-legrift row-normal">25%</td>
+		<td class="difftable col-db row-normal">15%</td>
+		<td class="difftable col-key ptrcolor row-normal">1</td>
+		<td class="difftable col-cachemats row-normal">2 (1)</td>
+		<td class="difftable col-cachelegs row-normal">10%</td>
+		<td class="difftable col-machines row-normal">-</td>
+		<td class="difftable col-organs ptrcolor row-normal right">-</td>
+	</tr>
+	<tr class="difftable" id="row-hard">
+		<td class="difftable left diff row-hard" id="hard">Hard</td>
+		<td class="difftable col-gr row-hard">GR1</td>
+		<td class="difftable col-hp row-hard">200%</td>
+		<td class="difftable col-dmg row-hard">130%</td>
+		<td class="difftable col-xp row-hard">75%</td>
+		<td class="difftable col-gold row-hard">75%</td>
+		<td class="difftable col-leg row-hard">0%</td>
+		<td class="difftable col-legrift row-hard">25%</td>
+		<td class="difftable col-db row-hard">18%</td>
+		<td class="difftable col-key ptrcolor row-hard">2<sup>nd</sup> 5%</td>
+		<td class="difftable col-cachemats row-hard">2 (1)</td>
+		<td class="difftable col-cachelegs row-hard">10%</td>
+		<td class="difftable col-machines row-hard">-</td>
+		<td class="difftable col-organs row-hard right">-</td>
+	</tr>
+	<tr class="difftable" id="row-expert">
+		<td class="difftable left diff row-expert" id="expert">Expert</td>
+		<td class="difftable col-gr row-expert">GR4</td>
+		<td class="difftable col-hp row-expert">320%</td>
+		<td class="difftable col-dmg row-expert">189%</td>
+		<td class="difftable col-xp row-expert">100%</td>
+		<td class="difftable col-gold row-expert">100%</td>
+		<td class="difftable col-leg row-expert">0%</td>
+		<td class="difftable col-legrift row-expert">25%</td>
+		<td class="difftable col-db row-expert">21%</td>
+		<td class="difftable col-key ptrcolor row-expert">2<sup>nd</sup> 10%</td>
+		<td class="difftable col-cachemats row-expert">2 (1)</td>
+		<td class="difftable col-cachelegs row-expert">10%</td>
+		<td class="difftable col-machines row-expert">-</td>
+		<td class="difftable col-organs row-expert right">-</td>
+	</tr>
+	<tr class="difftable" id="row-master">
+		<td class="difftable left diff row-master" id="master">Master</td>
+		<td class="difftable col-gr row-master">GR7</td>
+		<td class="difftable col-hp row-master">512%</td>
+		<td class="difftable col-dmg row-master">273%</td>
+		<td class="difftable col-xp row-master">200%</td>
+		<td class="difftable col-gold row-master">200%</td>
+		<td class="difftable col-leg row-master">0%</td>
+		<td class="difftable col-legrift row-master">25%</td>
+		<td class="difftable col-db row-master">25%</td>
+		<td class="difftable col-key ptrcolor row-master">2<sup>nd</sup> 15%</td>
+		<td class="difftable col-cachemats row-master">2 (1)</td>
+		<td class="difftable col-cachelegs row-master">10%</td>
+		<td class="difftable col-machines row-master">-</td>
+		<td class="difftable col-organs row-master right">-</td>
+	</tr>
+	<tr class="difftable" id="row-t1">
+		<td class="difftable left diff row-t1" id="t1">T1</td>
+		<td class="difftable col-gr row-t1">GR10</td>
+		<td class="difftable col-hp row-t1">819%</td>
+		<td class="difftable col-dmg row-t1">396%</td>
+		<td class="difftable col-xp row-t1">300%</td>
+		<td class="difftable col-gold row-t1">300%</td>
+		<td class="difftable col-leg row-t1">15%</td>
+		<td class="difftable col-legrift row-t1">44%</td>
+		<td class="difftable col-db row-t1">31%</td>
+		<td class="difftable col-key ptrcolor row-t1">2<sup>nd</sup> 20%</td>
+		<td class="difftable col-cachemats row-t1">3</td>
+		<td class="difftable col-cachelegs row-t1">10%</td>
+		<td class="difftable col-machines ptrcolor row-t1">50%</td>
+		<td class="difftable col-organs row-t1 right">1</td>
+	</tr>
+	<tr class="difftable" id="row-t2">
+		<td class="difftable left diff row-t2" id="t2">T2</td>
+		<td class="difftable col-gr row-t2">GR13</td>
+		<td class="difftable col-hp row-t2">1 311%</td>
+		<td class="difftable col-dmg row-t2">575%</td>
+		<td class="difftable col-xp row-t2">400%</td>
+		<td class="difftable col-gold row-t2">400%</td>
+		<td class="difftable col-leg row-t2">32%</td>
+		<td class="difftable col-legrift row-t2">65%</td>
+		<td class="difftable col-db row-t2">37%</td>
+		<td class="difftable col-key ptrcolor row-t2">2<sup>nd</sup> 25%</td>
+		<td class="difftable col-cachemats row-t2">3</td>
+		<td class="difftable col-cachelegs row-t2">50%</td>
+		<td class="difftable col-machines ptrcolor row-t2">75%</td>
+		<td class="difftable col-organs row-t2 right">2<sup>nd</sup> 10%</td>
+	</tr>
+	<tr class="difftable" id="row-t3">
+		<td class="difftable left diff row-t3" id="t3">T3</td>
+		<td class="difftable col-gr row-t3">GR16</td>
+		<td class="difftable col-hp row-t3">2 097%</td>
+		<td class="difftable col-dmg row-t3">833%</td>
+		<td class="difftable col-xp row-t3">550%</td>
+		<td class="difftable col-gold row-t3">550%</td>
+		<td class="difftable col-leg row-t3">52%</td>
+		<td class="difftable col-legrift row-t3">90%</td>
+		<td class="difftable col-db row-t3">44%</td>
+		<td class="difftable col-key ptrcolor row-t3">2<sup>nd</sup> 31%</td>
+		<td class="difftable col-cachemats row-t3">3</td>
+		<td class="difftable col-cachelegs row-t3">60%</td>
+		<td class="difftable col-machines ptrcolor row-t3">90%</td>
+		<td class="difftable col-organs row-t3 right">2<sup>nd</sup> 25%</td>
+	</tr>
+	<tr class="difftable" id="row-t4">
+		<td class="difftable left diff row-t4" id="t4">T4</td>
+		<td class="difftable col-gr row-t4">GR19</td>
+		<td class="difftable col-hp row-t4">3 355%</td>
+		<td class="difftable col-dmg row-t4">1 208%</td>
+		<td class="difftable col-xp row-t4">800%</td>
+		<td class="difftable col-gold row-t4">800%</td>
+		<td class="difftable col-leg row-t4">75%</td>
+		<td class="difftable col-legrift row-t4">119%</td>
+		<td class="difftable col-db row-t4">53%</td>
+		<td class="difftable col-key ptrcolor row-t4">2<sup>nd</sup> 38%</td>
+		<td class="difftable col-cachemats row-t4">3</td>
+		<td class="difftable col-cachelegs row-t4">75%</td>
+		<td class="difftable col-machines ptrcolor row-t4">100%</td>
+		<td class="difftable col-organs row-t4 right">2<sup>nd</sup> 50%</td>
+	</tr>
+	<tr class="difftable" id="row-t5">
+		<td class="difftable left diff row-t5" id="t5">T5</td>
+		<td class="difftable col-gr row-t5">GR22</td>
+		<td class="difftable col-hp row-t5">5 369%</td>
+		<td class="difftable col-dmg row-t5">1 752%</td>
+		<td class="difftable col-xp row-t5">1 150%</td>
+		<td class="difftable col-gold row-t5">1 150%</td>
+		<td class="difftable col-leg row-t5">101%</td>
+		<td class="difftable col-legrift row-t5">151%</td>
+		<td class="difftable col-db row-t5">64%</td>
+		<td class="difftable col-key ptrcolor row-t5">2<sup>nd</sup> 44%</td>
+		<td class="difftable col-cachemats row-t5">3</td>
+		<td class="difftable col-cachelegs row-t5">90%</td>
+		<td class="difftable col-machines ptrcolor row-t5">2<sup>nd</sup> 10%</td>
+		<td class="difftable col-organs row-t5 right">2<sup>nd</sup> 75%</td>
+	</tr>
+	<tr class="difftable" id="row-t6">
+		<td class="difftable left diff row-t6" id="t6">T6</td>
+		<td class="difftable col-gr row-t6">GR25</td>
+		<td class="difftable col-hp row-t6">8 590%</td>
+		<td class="difftable col-dmg row-t6">2 540%</td>
+		<td class="difftable col-xp row-t6">1 600%</td>
+		<td class="difftable col-gold row-t6">1 600%</td>
+		<td class="difftable col-leg row-t6">131%</td>
+		<td class="difftable col-legrift row-t6">189%</td>
+		<td class="difftable col-db row-t6">75%</td>
+		<td class="difftable col-key ptrcolor row-t6">2<sup>nd</sup> 51%</td>
+		<td class="difftable col-cachemats row-t6">3</td>
+		<td class="difftable col-cachelegs row-t6">100%</td>
+		<td class="difftable col-machines ptrcolor row-t6">2<sup>nd</sup> 20%</td>
+		<td class="difftable col-organs row-t6 right">2<sup>nd</sup> 90%</td>
+	</tr>
+	<tr class="difftable" id="row-t7">
+		<td class="difftable left diff row-t7" id="t7">T7</td>
+		<td class="difftable col-gr row-t7">GR30</td>
+		<td class="difftable col-hp row-t7">18 985%</td>
+		<td class="difftable col-dmg row-t7">3 604%</td>
+		<td class="difftable col-xp row-t7">1 900%</td>
+		<td class="difftable col-gold row-t7 ptrcolor">1 850%</td>
+		<td class="difftable col-leg row-t7">164%</td>
+		<td class="difftable col-legrift row-t7">236%</td>
+		<td class="difftable col-db row-t7">90%</td>
+		<td class="difftable col-key ptrcolor row-t7">2<sup>nd</sup> 60%</td>
+		<td class="difftable col-cachemats row-t7">4</td>
+		<td class="difftable col-cachelegs row-t7">2<sup>nd</sup> 5%</td>
+		<td class="difftable col-machines ptrcolor row-t7">2<sup>nd</sup> 30%</td>
+		<td class="difftable col-organs row-t7 right">2</td>
+	</tr>
+	<tr class="difftable" id="row-t8">
+		<td class="difftable left diff row-t8" id="t8">T8</td>
+		<td class="difftable col-gr row-t8">GR35</td>
+		<td class="difftable col-hp row-t8">41 625%</td>
+		<td class="difftable col-dmg row-t8">5 097%</td>
+		<td class="difftable col-xp ptrcolor row-t8">2 425%</td>
+		<td class="difftable col-gold row-t8 ptrcolor">2 150%</td>
+		<td class="difftable col-leg row-t8">205%</td>
+		<td class="difftable col-legrift row-t8">295%</td>
+		<td class="difftable col-db row-t8">2<sup>nd</sup> 15%</td>
+		<td class="difftable col-key ptrcolor row-t8">2<sup>nd</sup> 70%</td>
+		<td class="difftable col-cachemats row-t8">4</td>
+		<td class="difftable col-cachelegs row-t8">2<sup>nd</sup> 15%</td>
+		<td class="difftable col-machines ptrcolor row-t8">2<sup>nd</sup> 40%</td>
+		<td class="difftable col-organs row-t8 right">3<sup>rd</sup> 10%</td>
+	</tr>
+	<tr class="difftable" id="row-t9">
+		<td class="difftable left diff row-t9" id="t9">T9</td>
+		<td class="difftable col-gr row-t9">GR40</td>
+		<td class="difftable col-hp row-t9">91 260%</td>
+		<td class="difftable col-dmg row-t9">7 208%</td>
+		<td class="difftable col-xp ptrcolor row-t9">3 100%</td>
+		<td class="difftable col-gold row-t9 ptrcolor">2 500%</td>
+		<td class="difftable col-leg row-t9">256%</td>
+		<td class="difftable col-legrift row-t9">369%</td>
+		<td class="difftable col-db row-t9">2<sup>nd</sup> 25%</td>
+		<td class="difftable col-key ptrcolor row-t9">2<sup>nd</sup> 80%</td>
+		<td class="difftable col-cachemats row-t9">4</td>
+		<td class="difftable col-cachelegs row-t9">2<sup>nd</sup> 25%</td>
+		<td class="difftable col-machines ptrcolor row-t9">2<sup>nd</sup> 50%</td>
+		<td class="difftable col-organs row-t9 right">3<sup>rd</sup> 25%</td>
+	</tr>
+	<tr class="difftable" id="row-t10">
+		<td class="difftable left diff row-t10" id="t10">T10</td>
+		<td class="difftable col-gr row-t10">GR45</td>
+		<td class="difftable col-hp row-t10">200 082%</td>
+		<td class="difftable col-dmg row-t10">10 194%</td>
+		<td class="difftable col-xp ptrcolor row-t10">4 000%</td>
+		<td class="difftable col-gold row-t10 ptrcolor">2 900%</td>
+		<td class="difftable col-leg row-t10">320%</td>
+		<td class="difftable col-legrift row-t10">461%</td>
+		<td class="difftable col-db row-t10">2<sup>nd</sup> 50%</td>
+		<td class="difftable col-key ptrcolor row-t10">2<sup>nd</sup> 90%</td>
+		<td class="difftable col-cachemats row-t10">5</td>
+		<td class="difftable col-cachelegs row-t10">2<sup>nd</sup> 50%</td>
+		<td class="difftable col-machines ptrcolor row-t10">2<sup>nd</sup> 60%</td>
+		<td class="difftable col-organs row-t10 right">3<sup>rd</sup> 50%</td>
+	</tr>
+	<tr class="difftable" id="row-t11">
+		<td class="difftable left diff row-t11" id="t11">T11</td>
+		<td class="difftable col-gr row-t11">GR50</td>
+		<td class="difftable col-hp row-t11 ptrcolor">438 700%</td>
+		<td class="difftable col-dmg row-t11 ptrcolor">14 416%</td>
+		<td class="difftable col-xp ptrcolor row-t11">5 000%</td>
+		<td class="difftable col-gold row-t11 ptrcolor">3 350%</td>
+		<td class="difftable col-leg ptrcolor row-t11">400%</td>
+		<td class="difftable col-legrift row-t11 ptrcolor">577%</td>
+		<td class="difftable col-db ptrcolor row-t11">2<sup>nd</sup> 75%</td>
+		<td class="difftable col-key ptrcolor row-t11">2</td>
+		<td class="difftable col-cachemats ptrcolor row-t11">6</td>
+		<td class="difftable col-cachelegs row-t11 ptrcolor">2<sup>nd</sup> 65%</td>
+		<td class="difftable col-machines ptrcolor row-t11">2<sup>nd</sup> 70%</td>
+		<td class="difftable col-organs row-t11 ptrcolor right">3<sup>rd</sup> 75%</td>
+	</tr>
+	<tr class="difftable" id="row-t12">
+		<td class="difftable left diff row-t12" id="t12">T12</td>
+		<td class="difftable col-gr row-t12">GR55</td>
+		<td class="difftable col-hp row-t12 ptrcolor">961 800%</td>
+		<td class="difftable col-dmg row-t12 ptrcolor">20 387%</td>
+		<td class="difftable col-xp ptrcolor row-t12">6 400%</td>
+		<td class="difftable col-gold row-t12 ptrcolor">3 900%</td>
+		<td class="difftable col-leg ptrcolor row-t12">500%</td>
+		<td class="difftable col-legrift row-t12 ptrcolor">721%</td>
+		<td class="difftable col-db ptrcolor row-t12">2</td>
+		<td class="difftable col-key ptrcolor row-t12">3<sup>rd</sup> 12%</td>
+		<td class="difftable col-cachemats ptrcolor row-t12">7</td>
+		<td class="difftable col-cachelegs row-t12 ptrcolor">2<sup>nd</sup> 80%</td>
+		<td class="difftable col-machines ptrcolor row-t12">2<sup>nd</sup> 80%</td>
+		<td class="difftable col-organs row-t12 ptrcolor right">3<sup>rd</sup> 90%</td>
+	</tr>
+	<tr class="difftable" id="row-t13">
+		<td class="difftable left diff row-t13" id="t13">T13</td>
+		<td class="difftable col-gr row-t13">GR60</td>
+		<td class="difftable col-hp row-t13 ptrcolor">2 109 000%</td>
+		<td class="difftable col-dmg row-t13 ptrcolor">28 831%</td>
+		<td class="difftable col-xp ptrcolor row-t13">8 200%</td>
+		<td class="difftable col-gold row-t13 ptrcolor">4 500%</td>
+		<td class="difftable col-leg ptrcolor row-t13">625%</td>
+		<td class="difftable col-legrift row-t13 ptrcolor">901%</td>
+		<td class="difftable col-db ptrcolor row-t13">3<sup>rd</sup> 25%</td>
+		<td class="difftable col-key ptrcolor row-t13">3<sup>rd</sup> 25%</td>
+		<td class="difftable col-cachemats ptrcolor row-t13">8</td>
+		<td class="difftable col-cachelegs row-t13 ptrcolor">2</td>
+		<td class="difftable col-machines ptrcolor row-t13">2<sup>nd</sup> 90%</td>
+		<td class="difftable col-organs row-t13 ptrcolor right">3</td>
+	</tr>
+	</table>
+</div>
+
+<br /><br /><br />
+
+<div id="legend">
+	<span>Notes:</span><br />
+	<span class="legend">"2<sup>nd</sup> 50%" means there is a 50% chance for a second drop (and 100% for one drop).</span><br />
+	<span class="legend">"2 (1)": You only get 1 material from the bonus cache on sub-Torment difficulties. All caches below level 70 yield only 1 material.</span><br />
+	<span class="legend ptrcolor">Highlighted in green: 2.4.2 changes.</span><br />
+	<span class="legend">GR key and machine drop rate (for all difficulties) and all T11-T13 drop rates are estimates.</span><br />
+	<span class="legend">Sources are the official <a href="http://us.battle.net/d3/en/game/guide/gameplay/game-difficulty" target="_blank">Game Guide</a> and data gathered by the community (special thanks to <a href="https://www.twitch.tv/carn_iv_orus" target="_blank">AtACarnivorus</a> and <a href="http://www.diablofans.com/members/207062-nickfudu" target="_blank">NickFudu</a> for 2.4.2 testing).</span><br />
+	<span class="legend">For feedback, questions, or any updated data contact <a href="http://www.diablofans.com/members/85801-bagstone" target="_blank">Bagstone at Diablofans</a>.</span>
+</div>
+
+<br /><br /><br />
+
+<a href="index.php?1">Switch back to original view</a>
+
+<br /><br />
+
+<a href="http://www.diablofans.com/forums/diablo-iii-general-forums/diablo-iii-general-discussion/208767-patch-2-4-2-gr-keys-and-other-changes-what" target="_blank">Analysis of difficulty scaling with regard to "which Torment is most efficient"</a>
+
+<br /><br />
+
+<span>Static images:</span><br />
+<a href="../difficulties.png" target="_blank">Current (Season/Era 7)</a><br />
+<a href="../difficulties-s4.png" target="_blank">Season/Era 4</a><br />
+<a href="../difficulties-s5and6.png" target="_blank">Season/Era 5+6</a><br />
+<a href="../difficulties-ptr.png" target="_blank">PTR (only if different)</a>
+
+</div>
+
+<br /><br /><br />
+
+<div id="bottom-box">
+<div id="customize-button">
+Customize...
+</div>
+<div id="customize-content" class="hidden">
+<h3>Choose difficulties to display</h3>
+<div class="buttonrow">
+	<a href="#" id="hideallrows">(Hide all)</a>&nbsp;
+	<input type="submit" class="yes unhiderow" id="input-normal" value="Normal" />
+	<input type="submit" class="yes unhiderow" id="input-hard" value="Hard" />
+	<input type="submit" class="yes unhiderow" id="input-expert" value="Expert" />
+	<input type="submit" class="yes unhiderow" id="input-master" value="Master" />
+	<input type="submit" class="yes unhiderow" id="input-t1" value="T1" />
+	<input type="submit" class="yes unhiderow" id="input-t2" value="T2" />
+	<input type="submit" class="yes unhiderow" id="input-t3" value="T3" />
+	<input type="submit" class="yes unhiderow" id="input-t4" value="T4" />
+	<input type="submit" class="yes unhiderow" id="input-t5" value="T5" />
+	<input type="submit" class="yes unhiderow" id="input-t6" value="T6" />
+	<input type="submit" class="yes unhiderow" id="input-t7" value="T7" />
+	<input type="submit" class="yes unhiderow" id="input-t8" value="T8" />
+	<input type="submit" class="yes unhiderow" id="input-t9" value="T9" />
+	<input type="submit" class="yes unhiderow" id="input-t10" value="T10" />
+	<input type="submit" class="yes unhiderow" id="input-t11" value="T11" />
+	<input type="submit" class="yes unhiderow" id="input-t12" value="T12" />
+	<input type="submit" class="yes unhiderow" id="input-t13" value="T13" />
+	&nbsp;<a href="#" id="showallcols">(Show all)</a>
+</div>
+<h3>Choose values/drop rates to display</h3>
+<div class="buttonrow">
+	<a href="#" id="hideallcols">(Hide all)</a>&nbsp;
+	<input type="submit" class="yes unhidecol" id="input-gr" value="GR equiv." />
+	<input type="submit" class="yes unhidecol" id="input-hp" value="Health" />
+	<input type="submit" class="yes unhidecol" id="input-dmg" value="Damage" />
+	<input type="submit" class="yes unhidecol" id="input-xp" value="XP" />
+	<input type="submit" class="yes unhidecol" id="input-gold" value="Gold" />
+	<input type="submit" class="yes unhidecol" id="input-leg" value="Legs" />
+	<input type="submit" class="yes unhidecol" id="input-legrift" value="Legs (rift)" />
+	<input type="submit" class="yes unhidecol" id="input-db" value="DBs" />
+	<input type="submit" class="yes unhidecol" id="input-key" value="Keys" />
+	<input type="submit" class="yes unhidecol" id="input-cachemats" value="Cache mats" />
+	<input type="submit" class="yes unhidecol" id="input-cachelegs" value="Cache legs" />
+	<input type="submit" class="yes unhidecol" id="input-machines" value="Machines" />
+	<input type="submit" class="yes unhidecol" id="input-organs" value="Organs" />
+	&nbsp;<a href="#" id="showallrows">(Show all)</a>
+</div>
+</div>
+</div>
+
+<script>
+function loadSettings() {
+		};
+
+function repaintTable() {
+	$('td.difftable').removeClass('darker');
+	$('tr.difftable:visible:odd td').addClass('darker');
+	$('td.difftable').removeClass('last-row');
+	$('tr.difftable:visible:last td').addClass('last-row');
+	$('td.difftable').removeClass('last-col');
+	$('td.difftable:not(:visible)').prev().addClass('last-col');
+	$('td.difftable.right').addClass('last-col');
+};
+
+// toggle customize box
+$('div#customize-button').click(function(event) {
+	$('div#customize-content').toggleClass('hidden');
+});
+
+// toggle difficulty column
+$('input.unhidecol').click(function(event) {
+	var eventType = "hidecol";
+	if($(event.target).hasClass("yes")) {
+		$('td.col-'+event.target.id.substr(6)).addClass('hiddenCol');
+		$(event.target).removeClass('yes');
+		$(event.target).addClass('no');
+	} else {
+		$('td.col-'+event.target.id.substr(6)).removeClass('hiddenCol');
+		$(event.target).addClass('yes');
+		$(event.target).removeClass('no');
+		eventType = "showcol";
+	}
+	repaintTable();
+	$.ajax({
+		url: 'pass_value.php',
+		type: 'POST',
+		data: {
+			'event': eventType.toString(),
+			'id': event.target.id.substr(6)
+		}
+	})
+});
+
+// hide all columns
+$('a#hideallcols').click(function() {
+	$('td.difftable[class*=col-]').addClass('hiddenCol');
+	$('input.unhidecol').removeClass('yes');
+	$('input.unhidecol').addClass('no');
+	repaintTable();
+	$.ajax({
+		url: 'pass_value.php',
+		type: 'POST',
+		data: {
+			'event': 'hideallcols',
+		}
+	})
+});
+
+// show all columns
+$('a#showallcols').click(function() {
+	$('td.difftable[class*=col-]').removeClass('hiddenCol');
+	$('input.unhidecol').removeClass('no');
+	$('input.unhidecol').addClass('yes');
+	repaintTable();
+	$.ajax({
+		url: 'pass_value.php',
+		type: 'POST',
+		data: {
+			'event': 'showallcols',
+		}
+	})
+});
+
+// toggle values/drop rate row
+$('input.unhiderow').click(function(event) {
+	var eventType = "hiderow";
+	if($(event.target).hasClass("yes")) {
+		$('tr#row-'+event.target.id.substr(6)).addClass('hiddenRow');
+		$(event.target).removeClass('yes');
+		$(event.target).addClass('no');
+	} else {
+		$('tr#row-'+event.target.id.substr(6)).removeClass('hiddenRow');
+		$(event.target).addClass('yes');
+		$(event.target).removeClass('no');
+		eventType = "showrow";
+	}
+	repaintTable();
+	$.ajax({
+		url: 'pass_value.php',
+		type: 'POST',
+		data: {
+			'event': eventType.toString(),
+			'id': event.target.id.substr(6)
+		}
+	})
+});
+
+// hide all rows
+$('a#hideallrows').click(function() {
+	$('tr.difftable[id*=row-]').addClass('hiddenRow');
+	$('input.unhiderow').removeClass('yes');
+	$('input.unhiderow').addClass('no');
+	repaintTable();
+	$.ajax({
+		url: 'pass_value.php',
+		type: 'POST',
+		data: {
+			'event': 'hideallrows',
+		}
+	})
+});
+
+// show all rows
+$('a#showallrows').click(function() {
+	$('tr.difftable[id*=row-]').removeClass('hiddenRow');
+	$('input.unhiderow').removeClass('no');
+	$('input.unhiderow').addClass('yes');
+	repaintTable();
+	$.ajax({
+		url: 'pass_value.php',
+		type: 'POST',
+		data: {
+			'event': 'showallrows',
+		}
+	})
+});
+
+$(document).ready(function() {
+	$.ajax({
+		url: 'pass_value.php',
+		type: 'POST',
+		data: {
+			'view': '2',
+		}
+	})
+	loadSettings();
+	repaintTable();
+});
+</script>
+
+</body>
+</html>

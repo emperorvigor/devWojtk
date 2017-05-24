@@ -1,0 +1,11 @@
+* {margin:0px;padding:0px:}
+
+#topDiv { height:23px; position:fixed; padding:6px 0px; width:100%; }
+
+#searchDiv { float:right; }
+
+#animeContainer { width:100%; margin-top:35px; height:1400px;}
+
+.animeDiv { width:150px; height:200px; }
+
+div {border:1px solid lightgrey;}

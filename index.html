@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="styles/styleTest.css">
+<script language="JavaScript" src="scripts/studs.js"></script>
+<script language="JavaScript" src="scripts/extraStuds.js"></script>
+<title>Widar</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+    $("div.infoDivs").hide();
+});
+$(document).ready(function(){
+  $("h1").click(function(){
+    $("div.infoDivs").slideToggle("fast");
+  });
+});
+	$(document).ready(function(){
+  $("#vemLink").click(function(){
+	$("#vem").slideToggle("fast");
+	});
+});
+$(document).ready(function(){
+  $("#kanLink").click(function(){
+	$("#kan").slideToggle("fast");
+	});
+});
+$(document).ready(function(){
+  $("#erfarenhetLink").click(function(){
+	$("#erfarenhet").slideToggle("fast");
+	});
+});
+$(document).ready(function(){
+  $("#kontaktaLink").click(function(){
+	$("#kontakta").slideToggle("fast");
+	});
+});
+$(document).ready(function(){
+  $("#bilderLink").click(function(){
+	$("#bilder").slideToggle("fast");
+	});
+});
+$(document).ready(function(){
+  $("#novellerLink").click(function(){
+	$("#noveller").slideToggle("fast");
+	});
+});
+$(document).ready(function(){
+  $("#hemsidorLink").click(function(){
+	$("#hemsidor").slideToggle("fast");
+	});
+});
+$(document).ready(function(){
+  $("#programmeringLink").click(function(){
+	$("#programmering").slideToggle("fast");
+	});
+});
+$(document).ready(function(){
+  $("#annatLink").click(function(){
+	$("#annat").slideToggle("fast");
+	});
+});
+</script>
+
+</head>
+<body onLoad="javascript:loadBouncingImages();">
+<canvas id="myCanvas"></canvas> 
+<div id="contentDiv">
+<div id="headerDiv">
+<h1>Widar</h1>
+<div id="footerDiv">
+<p><a href="fpx/fpx.html">Bildtest</a> | 
+<a href="nodejs/mysql-connection.js">NodeJS test</a>
+ | <a href="ArenanTest/arenanTest.html">ArenanTest</a>
+ | <a href="studsboll.html">Studsboll</a>
+ | <a href="bildspel.html">Bildspel</a>
+ | <a href="angularrouting/index.html">AngularRouting</a>
+ | <a href="gohorta_seeds/index.php">Gohorta</a>
+ | <a href="PhaserIso/index.html">Phaser+Isometric Plugin test</a>
+ <br />
+ <a href="languageAnimatedSelector/languageSelectorIndex.html">Animated language selector</a>
+ | <a href="dodini/Layout test.html">DoD assistenten</a>
+  | <a href="game_of_life/index.html">GoL</a>
+ </p> 
+</div>
+</div>
+<div id="left-content" class="contentDivs">
+<h2 id="vemLink">Vem är?</h2>
+<h2 id="kanLink">Vad kan?</h2>
+<h2 id="erfarenhetLink">Erfarenhet?</h2>
+<h2 id="kontaktaLink">Hur kontakta?</h2>
+</div>
+<div id="right-content" class="contentDivs">
+<h2 id="bilderLink">Bilder</h2>
+<h2 id="novellerLink">Noveller</h2>
+<h2 id="hemsidorLink">Hemsidor</h2>
+<h2 id="programmeringLink">Programmering</h2>
+<h2 id="annatLink">Annat</h2>
+</div>
+<div id="center-content" class="contentDivs">
+<div id="vem" class="infoDivs"><p>Dag ett hundra och trettiotre, den första dagen i årets tolfte och sista tana, Nordkalendern.<br /><br />
+Baladenaus ruiner är den mest spöklika plats jag hittills besökt. Kanske är det för att så få känner till denna ödsliga plats, kanske är det för att de omgivande bergen, Finûrbergen, är så ogästvänliga i sig. Vinden pinar ständigt de branta klippsidorna med sin klagosång, sätter grus och sten i rullning så att det låter som om ett bakhåll väntar bakom nästa krök på stigen... Det är kort sagt mycket svårt att skaka av sig känslan av att vara iakttagen och tvinga undan fruktans kalla hand.
+</p>
+</div>
+<div id="kan" class="infoDivs"><p>Jag kan... mycket saker, en väldig massa skulle man kunna säga. Tyvärr så är ju ordet "massa" nära till hands när man diskuterar fysik, och det gör vi ju inte här. Notera att "fysik" inte syftar på fysisk fysik...</p>
+<p>Å andra sidan är ju universum uppbyggt av både det ena och det tredje så varför inte prata om allt när man ändå håller på att fylla ut denna lilla span!</p>
+</div>
+<div id="erfarenhet" class="infoDivs"><p>Min erfarenhet</p>
+</div>
+<div id="kontakta" class="infoDivs"><p>Kontakta mig!</p>
+</div>
+<div id="bilder" class="infoDivs"><p>Bilder, stalker much?</p>
+</div>
+<div id="noveller" class="infoDivs"><p>Noveller!</p>
+</div>
+<div id="hemsidor" class="infoDivs"><p>Dessa sidor har jag gjort:</p>
+</div>
+<div id="programmering" class="infoDivs"><p>Smått och gott och kodat.</p>
+</div>
+<div id="annat" class="infoDivs"><p>Utfyllnade, det vill säga annat!</p>
+</div>
+</div>
+</div>
+</body>
+</html> 
